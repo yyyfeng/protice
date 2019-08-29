@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+</head>
+<!-- boostrap需要的所有的css -->
+<link rel="stylesheet" type="text/css"
+      href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<!-- 主题CSS -->
+<link rel="stylesheet" type="text/css"
+      href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+<!-- bootstrap需要jquery作为基础 -->
+<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-2.1.0.min.js"></script>
+<!-- boostrap需要的js -->
+<script type="text/javascript"
+        src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<body>
+<form class="form-horizontal" role="form" action="/insertUser" method="post">
+    <div STYLE="text-align: center">
+        <h3>REGISTER</h3>
+    </div>
+    <div class="form-group">
+        <label for="userNamename" class="col-sm-2 control-label">NAME</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="userNamename"  name="userName"  placeholder="name ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="userPass" class="col-sm-2 control-label">PASS</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="userPass" name="userPass" placeholder="pass ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="userSex" class="col-sm-2 control-label">SEX</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="userSex"  name="userSex" placeholder="sex ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="userAge" class="col-sm-2 control-label">AGE</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="userAge" name="userAge" placeholder="age ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="userMobile" class="col-sm-2 control-label">MOBILE</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="userMobile" name="userMobile" placeholder="mobile ">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">REGISER</button>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
