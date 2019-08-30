@@ -7,12 +7,34 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Slf4j
 public class UesrServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Override
+    public int login(String userName, String userPass) {
+        List<User> users = userMapper.selectByName(userName);
+        if(users.size()==0){
+            return 0;
+        }else{
+            User user = users.get(0);
+            if(user.getUserPass().equals(userPass)){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+    }
+
+    @Override
+    public int delete(int userId) {
+        return userMapper.deleteUser(userId);
+    }
 
     @Override
     public String insertUser(User user) {
@@ -50,6 +72,15 @@ public class UesrServiceImpl implements UserService {
                     }
                 }
             }
+        }
+    }
+
+    @Override
+    public List<User> selectAll(String userName) {
+        if(userName.equals("未匹配")){
+            return userMapper.selectAll();
+        }else{
+            return userMapper.selectByName(userName);
         }
     }
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class User {
 
+    private int userId;  //此处ID为后面需求加入，不做其他作用
     private String userName;
     private String userPass;
     private String userSex;
